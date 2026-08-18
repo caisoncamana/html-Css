@@ -1,0 +1,791 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    background-color: #ffffff;
+    color: #333333;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto-VariableFont_wdth\,wght.ttf) format('truetype');
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #002147;
+
+}
+
+/* --- 1. ESTILO DO MENU --- */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 10px;
+    width: 100%;
+    background-color: #173247;
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 30px;
+}
+
+.logos-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-main { height: 50px; }
+.logo-50 { height: 45px; }
+
+/* --- CONFIGURAÇÃO DO MENU PRINCIPAL --- */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin-left: 60px;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Prepara o espaço apenas para os itens que são dropdown */
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 22px;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+/* --- ESTILO DAS CAIXAS AZUÍS SUBMISSAS --- */
+.nav-menu .dropdown-menu {
+    display: none;             /* Ficam invisíveis por padrão */
+    position: absolute;        /* Flutuam abaixo do botão */
+    top: 100%;
+    left: 0;
+    width: 230px;              
+    background-color: #002147; 
+    list-style: none;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;              /* Fica por cima do banner do campus */
+}
+
+.nav-menu .dropdown-menu li {
+    width: 100%;
+}
+
+.nav-menu .dropdown-menu a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 22px;      
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+/* Efeito de destaque nas linhas de dentro da caixa azul */
+.nav-menu .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.12); 
+}
+
+/* --- O HOVER ATIVO APENAS PARA OS DOIS --- */
+.nav-menu li.dropdown:hover .dropdown-menu {
+    display: block;            /* Abre apenas se passar o mouse em SOBRE UAN ou ENSINO */
+}
+.nav-menu a:hover {
+    color: #fdc800; /* Laranja do botão início */
+}
+
+/* --- 2. O BANNER E O SEGREDO DOS CARDS (IMAGEM 1 E 2) --- */
+.hero-section {
+    position: relative; /* Define que os blocos vão se guiar por aqui */
+    width: 100%;
+}
+
+.hero-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container dos blocos azuis */
+.cards-overlay {
+    position: absolute;
+    bottom: -60px; /* bloco fora da imagem */
+    left: 5%;
+    right: 5%;
+    display: flex;
+    background-color: rgba(0, 33, 71, 0.85); 
+    backdrop-filter: blur(8px); 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+/* Cada um dos 3 blocos individuais */
+.card-box {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    color: #ffffff;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); 
+    
+}
+
+.no-border {
+    border-right: none;
+}
+
+.card-text {
+    padding-right: 15px;
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 19px;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+}
+.card-tag:hover{
+    color: #fdc800;
+}
+
+.tag-orange {
+    border-bottom: 2px solid #fdc800;
+}
+
+.card-box p {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.card-icon {
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+/* --- 3. SEÇÃO DE TEXTO INFERIOR (IMAGEM 2) --- */
+.welcome-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 60px 20px; /* O padding-top de 120px garante que o texto não fique escondido sob os cards */
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 48px;
+    color: #002147;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-reitor {
+    background-color: #701a75; /* Tom roxo/vinho do botão original */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-reitor:hover {
+    background-color: #4a044e;
+}
+/* --- 4. ESTILO DA SEÇÃO DE VÍDEO (FAIXA AZUL) --- */
+.institution-video-section {
+    width: 100%;
+    /* Gradiente que vai do azul escuro para um tom ligeiramente mais claro no meio */
+    background: linear-gradient(180deg, #001a3a 0%, #002d62 100%);
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.video-container p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* O Botão de Play Circulado */
+.play-btn {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.play-icon {
+    color: #f39c12; /* Cor dourada/laranja do triângulo interno */
+    font-size: 24px;
+    margin-left: 4px; /* Ajuste fino para centralizar o triângulo */
+}
+
+/* Efeito ao passar o mouse no Play */
+.play-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.faculties-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.faculties-section h3 {
+    font-size: 20px;
+    color: #002147;
+    margin-bottom: 40px;
+}
+
+/* Flexbox para alinhar as colunas com os brasões lado a lado */
+.faculties-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha os logos pela base inferior */
+    gap: 15px;
+    flex-wrap: wrap; /* Permite quebrar de linha se a tela for pequena */
+}
+
+/* Cada quadrado ou retângulo contendo o Brasão */
+.faculty-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px;
+    width: 150px; /* Largura controlada para manter o padrão vertical */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faculty-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Efeito sutil ao passar o mouse sobre os logos */
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+.faculty-card a{
+    text-decoration: none;
+    color: rgb(92, 87, 87);
+}
+/* --- 6. SECÇÃO DE NOTÍCIAS (FUNDO AZUL ESCURO) --- */
+.news-section {
+    width: 100%;
+    background-color: #0d2342; /* O azul profundo de fundo da secção */
+    padding: 60px 40px;
+    color: #ffffff;
+}
+
+/* Alinhamento do topo: Título à esquerda, link à direita */
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.news-title-area h2 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+/* Linha laranja abaixo do título NOTÍCIAS */
+.title-underline {
+    width: 45px;
+    height: 3px;
+    background-color: #f39c12; 
+}
+
+.all-news-link {
+    color: #f39c12; /* Cor laranja/dourada do link */
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.all-news-link:hover {
+    color: #e67e22;
+}
+
+/* --- A GRELHA DE CARTÕES (3 COLUNAS) --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide perfeitamente em 3 colunas iguais */
+    gap: 25px; /* Espaço entre os cartões */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo individual do Cartão Branco */
+.news-card {
+    background-color: #ffffff;
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Sobe ligeiramente ao passar o rato */
+}
+
+/* Área da foto da notícia */
+.card-thumb {
+    width: 100%;
+    height: 180px;
+    background-color: #f1f5f9; /* Cor de fundo caso a imagem falhe */
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o espaço sem distorcer */
+}
+
+/* Espaço do conteúdo do cartão */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Garante que todos os botões fiquem alinhados na base */
+}
+
+/* Bloco da Etiqueta e Data */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.meta-tag {
+    background-color: #f1c40f; /* Cor amarela de fundo */
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.meta-date {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* Título da Notícia */
+.card-title {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-title a {
+    color: #1e293b; /* Texto escuro legível */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-title a:hover {
+    color: #0d2342;
+}
+
+/* Rodapé do cartão (Autor) */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 12px;
+}
+
+.author-icon {
+    font-size: 14px;
+    color: #38bdf8; /* Tom azulado para simular o brasão sutil */
+}
+
+.author-name {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+/* --- SECÇÃO DE EVENTOS --- */
+.events-section {
+    width: 100%;
+    background-color: white; 
+    padding: 60px 40px;
+    color: #1e293b;
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.events-title-area h2 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.events-title-underline {
+    width: 45px;
+    height: 3px;
+    background-color: #f39c12; 
+}
+
+.all-events-link {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* --- GRELHA DE EVENTOS --- */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-thumb {
+    width: 100%;
+    height: 180px;
+}
+
+.event-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.event-title {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.event-title a {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.event-author-icon {
+    font-size: 14px;
+    color: #38bdf8;
+}
+
+.event-author-name {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: bold;
+}
+/* --- CONTAINER UNIFICADO (Estatísticas e Acessos) --- */
+.stats-and-access-section {
+    width: 100%;
+    background-color: #0d2342; /* O mesmo azul escuro de fundo */
+    padding: 0px 20px 60px 20px; /* Sem padding no topo para o efeito flutuante */
+    position: relative;
+}
+
+/* Espaço dos 3 cartões superiores */
+.quick-access-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transform: translateY(-30px); /* Move os cartões para cima, cruzando a divisão */
+    margin-bottom: 20px;
+}
+
+.access-card {
+    height: 120px;
+    background-color: #1e293b;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* Coloca o botão no fundo da caixinha */
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem de fundo sutil dentro de cada cartão */
+.access-card-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25; /* Deixa a imagem bem escura para focar no botão */
+    transition: transform 0.4s ease, opacity 0.4s;
+}
+
+.access-card:hover .access-card-bg {
+    transform: scale(1.05);
+    opacity: 0.4; /* Destaca ligeiramente a imagem no hover */
+}
+
+/* O botão branco arredondado idêntico à imagem */
+.access-btn {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 11.5px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.access-btn:hover {
+    background-color: #f39c12; /* Fica laranja ao passar o rato */
+    color: #ffffff;
+}
+
+/* --- REGRAS DAS ESTATÍSTICAS (MANTIDAS) --- */
+.stats-container {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 160px;
+    text-align: left;
+}
+
+.stat-number {
+    font-size: 38px;
+
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.stat-line {
+    width: 40px;
+    height: 3px;
+    background-color: #f39c12;
+    margin: 8px 0;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #cbd5e1;
+    line-height: 1.4;
+}
+/* --- AJUSTES DO RODAPÉ (FOOTER) --- */
+.main-footer {
+    width: 100%;
+    background-color: #0d2342; /* Tom de azul correspondente à imagem */
+    color: #ffffff;
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1.2fr 1fr; /* Ajusta a largura das colunas */
+    gap: 30px;
+    
+    padding: 0 20px 40px 20px;
+}
+
+/* O Segredo da Foto: Títulos com fundo azul destacado */
+.footer-title-badge {
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #004494; /* Azul mais escuro para a faixinha do título */
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* Organiza os links rápidos em duas colunas internas lado a lado */
+.footer-links-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.footer-col p, .footer-links-grid a {
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-links-grid a:hover {
+    text-decoration: none;
+    color:#f39c12 ;
+}
+
+/* Alinhamento da marca UAN no rodapé */
+.brand-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+/* Redes Sociais com caixas quadradas transparentes da imagem */
+.footer-socials {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Barra inferior de Copyright */
+.footer-bottom {
+    background-color: #0b1b33; /* Azul quase preto no fundo */
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 10px;
+    color: #a4b3c6;
+    margin: 0;
+}

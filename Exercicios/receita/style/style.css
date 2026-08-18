@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+:root{
+    --bg:#f3e5d8;
+    --texto: #824B3A;
+    --cor2:#FFF7FC;
+}
+
+body{
+    font-family: "Young Serif", serif;
+    background-color: var(--bg);
+    width: 100%;
+}
+
+
+.containerPrincipal{
+    border-radius: 10px;
+    width: auto;
+    background-color: white;
+    margin: 10% 25%;
+    padding: 10px;
+}
+
+.containerPrincipal h2{
+    font-size: 20px;
+    color: var(--texto);
+    padding: 10px;
+}
+
+.containerPrincipal h1{
+    font-size: 40px;
+    color: var(--texto);
+    padding: 10px;
+}
+
+
+img{
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.card{
+     margin-bottom: 10px;
+}
+
+.cardLista{
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.473);
+}
+
+.preparation{
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: var(--cor2);
+   
+}
+
+ul, ol{
+    margin-bottom: 18px;
+    list-style-position: inside;
+    padding: 0;
+}
+
+
+li{
+    margin: 6px;
+    margin-bottom: 10px;
+}
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela p{
+    margin-bottom: 10px;
+
+}
+
+table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.404);
+}
+
+table tr:last-child{
+    border-bottom: none;
+}
+
+.nutrition-table .label {
+  color: gray;
+  width: 50%;
+}
+
+.nutrition-table .value {
+  color: #824B3A;
+  font-weight: 700;
+  width: 50%;
+}
+
+
+
+

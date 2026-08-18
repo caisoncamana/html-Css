@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto-VariableFont_wdth\,wght.ttf) format('truetype');
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #002147;
+
+}
+ 
+    :root {
+     
+      --blue-mid:   #002147;
+      --blue-light:  #002147;
+      --text:        #1a1a2e;
+     --white:       #ffffff;
+      --radius:      6px;
+    }
+
+    body {
+    font-family: 'Roboto';
+    background-color: #ffffff;
+    color: #333333;
+}
+
+    .main-header {
+    width: 100%;
+    background-color: #173247;
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 30px;
+}
+
+.logos-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-main { height: 50px; }
+.logo-50 { height: 45px; }
+
+/* --- CONFIGURAÇÃO DO MENU PRINCIPAL --- */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin-left: 60px;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Prepara o espaço apenas para os itens que são dropdown */
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 22px;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+/* --- ESTILO DAS CAIXAS AZUÍS SUBMISSAS --- */
+.nav-menu .dropdown-menu {
+    display: none;             /* Ficam invisíveis por padrão */
+    position: absolute;        /* Flutuam abaixo do botão */
+    top: 100%;
+    left: 0;
+    width: 230px;              
+    background-color: #002147; 
+    list-style: none;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;              /* Fica por cima do banner do campus */
+}
+
+.nav-menu .dropdown-menu li {
+    width: 100%;
+}
+
+.nav-menu .dropdown-menu a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 22px;      
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+/* Efeito de destaque nas linhas de dentro da caixa azul */
+.nav-menu .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.12); 
+}
+
+/* --- O HOVER ATIVO APENAS PARA OS DOIS --- */
+.nav-menu li.dropdown:hover .dropdown-menu {
+    display: block;            /* Abre apenas se passar o mouse em SOBRE UAN ou ENSINO */
+}
+.nav-menu a:hover {
+    color: #fdc800; /* Laranja do botão início */
+}
+
+
+    /* ── TABS ── */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      padding: 0 2.5rem;
+      background: var(--white);
+      border-bottom: 2px solid #dde3ef;
+    }
+
+    .tab-bar button {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: .85rem 1.5rem;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: color .2s, border-color .2s;
+      margin-bottom: -2px;
+    }
+
+    .tab-bar button.active {
+      color: var(--blue-mid);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── ACCORDION ── */
+    .accordion {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0,53,128,.09);
+      margin-bottom: 1.1rem;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--blue-mid);
+      color: var(--white);
+      padding: 1rem 1.4rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .95rem;
+      user-select: none;
+      
+    }
+
+    .accordion-header:hover { background: var(--blue-light); }
+
+    .accordion-header .icon {
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1;
+      transition: transform .3s;
+    }
+
+    .accordion.open .accordion-header .icon { transform: rotate(45deg); }
+
+    .accordion-body {
+      padding: 1.5rem 1.6rem;
+      display: none;
+      line-height: 1.75;
+      color: var(--text);
+      font-size: .93rem;
+    }
+
+    .accordion.open .accordion-body { display: block; }
+
+   /* --- AJUSTES DO RODAPÉ (FOOTER) --- */
+.main-footer {
+    width: 100%;
+    background-color: #0d2342; /* Tom de azul correspondente à imagem */
+    color: #ffffff;
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1.2fr 1fr; /* Ajusta a largura das colunas */
+    gap: 30px;
+    
+    padding: 0 20px 40px 20px;
+}
+
+/* O Segredo da Foto: Títulos com fundo azul destacado */
+.footer-title-badge {
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #004494; /* Azul mais escuro para a faixinha do título */
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* Organiza os links rápidos em duas colunas internas lado a lado */
+.footer-links-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.footer-col p, .footer-links-grid a {
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-links-grid a:hover {
+    text-decoration: none;
+    color:#f39c12 ;
+}
+
+/* Alinhamento da marca UAN no rodapé */
+.brand-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+/* Redes Sociais com caixas quadradas transparentes da imagem */
+.footer-socials {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Barra inferior de Copyright */
+.footer-bottom {
+    background-color: #0b1b33; /* Azul quase preto no fundo */
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 10px;
+    color: #a4b3c6;
+    margin: 0;
+}

@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.topo{
+    background-color: grey;
+    padding: 20px;
+    text-align: center;
+}
+.menu{
+    background-color: rgb(53, 52, 52);
+    overflow: hidden;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+    float: left;
+    display: block;
+}
+.coluna-50{
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
