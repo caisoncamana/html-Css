@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E</title>
+    <title>Formularios</title>
 </head>
 <body>
+    <h1>Exeplo de Formulario</h1>
+
+    <form action="" method="post">
+        <p>
+            <label for="iest">Estado</label>
+            <select name="estado" id="iest">
+                <option value="Ld">Luanda</option>
+                <option value="Ic">Icolo e Bengo</option>
+                <option value="Ug">Uige</option>
+                <option value="Mj">Malange</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="iprof">Profissão</label>
+            <input type="text" name="profissao" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option >Programador</option>
+                <option >Arquiteto</option>
+                <option >Pedreiro</option>
+            </datalist>
+        </p>
+
+        <p>
+            <label for="imsg">Mensagem</label><br>
+            <textarea name="msg" id="imsg" cols="30" rows="12"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
     
 </body>
 </html>
