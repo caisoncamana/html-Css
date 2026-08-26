@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+
+    <style>
+        div.container{
+            background-color: blue;
+            display: flex;
+           flex-flow: row nowrap;
+        }
+
+        div.item{
+            background-color: aqua;
+            border: 1px solid black;
+            flex-basis: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Primeiros flexbox (flex-basis)</h1>
+    <div class="container">
+        <div class="item" id="i1">1</div>
+        <div class="item" id="i2">Outro conteudo</div>
+        <div class="item" id="i3">3</div>
+        <div class="item" id="i4">conteudo um pouco maior</div>
+        <div class="item" id="i5">5</div>
+        <div class="item" id="i6">conteudo maior ainda</div>
+        <div class="item" id="i6">7</div>
+    </div>
+    
+</body>
+</html>
