@@ -16,14 +16,39 @@ header{
     background-color: gray;
     padding: 10px;
     color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header > h1{
     border: 1px dotted black ;
+    flex: 0 0 200px;
 }
 
 header > nav{
     border: 1px dotted black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+header > nav > a{
+    background-color: black;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+
+}
+
+header > nav > a:hover{
+    background-color: rgba(255, 255, 255, 0.911);
+    color: black;
+    transition: background-col0r 0.5s;
 }
 
 main{
