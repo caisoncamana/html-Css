@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <style>
+        div.container{
+            border: 3px solid rgb(38, 0, 255);
+            display: grid;
+            height: 250px;
+            /*A ordem:
+            - grid-template-rows / grid-template-columns
+            */
+            grid-template: repeat(3, auto)/ repeat(3, auto);
+            gap: 20px;
+
+             /*A ordem:
+            -align items justify items
+            */
+            place-items: start center;
+
+             /*A ordem:
+            -align content justify content
+            */
+            place-content: space-between end;
+    
+
+        }
+
+        div.item{
+            padding: 5px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendendo display Grid</h1>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+
+    </div>
+    
+</body>
+</html>
